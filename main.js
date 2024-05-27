@@ -35,31 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', shadowHeader)
 
     // EMAIL JS
-    const contactForm = document.getElementById('contact-form'),
-        contactMessage = document.getElementById('contact-message')
-    const sendEmail = (e) => {
-        e.preventDefault()
-
-        // service id - template id - form - public key
-        emailjs.sendForm('service id', 'template id', 'form', 'public key')
-            .then(() => {
-                // Show message after sending message
-                contactMessage.textContent = 'Message sent successfully ✅'
-
-                // Remove message after 5 seconds
-                setTimeout(() => {
-                    contactMessage.textContent = ''
-                }, 5000)
-
-                // Clear input after sending
-                contactForm.reset()
-            }, () => {
-                // Show error message
-                contactMessage.textContent = 'Message not sent (service error) ❌'
-            })
-    }
-    contactForm.addEventListener('submit', sendEmail)
-
+    
     // SHOW SCROLLUP
     const scrollUp = () => {
         const scrollUp = document.getElementById('scroll-up');
